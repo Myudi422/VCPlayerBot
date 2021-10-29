@@ -53,7 +53,7 @@ IST = pytz.timezone(Config.TIME_ZONE)
 if Config.DATABASE_URI:
     from utils import db
 
-HOME_TEXT = "<b>Hey  [{}](tg://user?id={}) 🙋‍♂️\n\nIam A Bot Built To Play or Stream Videos In Telegram VoiceChats.\nI Can Stream Any YouTube Video Or A Telegram File Or Even A YouTube Live.</b>"
+HOME_TEXT = "<b>Hey  [{}](tg://user?id={}) 🙋‍♂️\n\nSaya Bot yang Dibuat Untuk Memutar atau Streaming Video Di Channel @ccgnimeX.</b>"
 admin_filter=filters.create(is_admin) 
 
 @Client.on_message(filters.command(['start', f"start@{Config.BOT_USERNAME}"]))
@@ -129,12 +129,8 @@ async def start(client, message):
         return
     buttons = [
         [
-            InlineKeyboardButton('⚙️ Update Channel', url='https://t.me/subin_works'),
-            InlineKeyboardButton('🧩 Source', url='https://github.com/subinps/VCPlayerBot')
-        ],
-        [
-            InlineKeyboardButton('👨🏼‍🦯 Help', callback_data='help_main'),
-            InlineKeyboardButton('🗑 Close', callback_data='close'),
+            InlineKeyboardButton('👨🏼‍🦯 Bantuan', callback_data='help_main'),
+            InlineKeyboardButton('🗑 Tutup', callback_data='close'),
         ]
     ]
     reply_markup = InlineKeyboardMarkup(buttons)
@@ -149,18 +145,18 @@ async def show_help(client, message):
         [
             [
                 InlineKeyboardButton("Play", callback_data='help_play'),
-                InlineKeyboardButton("Settings", callback_data=f"help_settings"),
-                InlineKeyboardButton("Recording", callback_data='help_record'),
+                InlineKeyboardButton("Peraturan", callback_data=f"help_settings"),
+                InlineKeyboardButton("Rekaman", callback_data='help_record'),
             ],
             [
-                InlineKeyboardButton("Scheduling", callback_data="help_schedule"),
+                InlineKeyboardButton("Penjadwalan", callback_data="help_schedule"),
                 InlineKeyboardButton("Controling", callback_data='help_control'),
-                InlineKeyboardButton("Admins", callback_data="help_admin"),
+                InlineKeyboardButton("Admin", callback_data="help_admin"),
             ],
             [
-                InlineKeyboardButton("Misc", callback_data='help_misc'),
-                InlineKeyboardButton("Config Vars", callback_data='help_env'),
-                InlineKeyboardButton("Close", callback_data="close"),
+                InlineKeyboardButton("Lanjutan", callback_data='help_misc'),
+                InlineKeyboardButton("Config Bot", callback_data='help_env'),
+                InlineKeyboardButton("Tutup", callback_data="close"),
             ],
         ]
         )
