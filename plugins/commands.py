@@ -64,21 +64,21 @@ async def start(client, message):
                 [
                     [
                         InlineKeyboardButton(f"Play", callback_data='help_play'),
-                        InlineKeyboardButton(f"Settings", callback_data=f"help_settings"),
-                        InlineKeyboardButton(f"Recording", callback_data='help_record'),
+                        InlineKeyboardButton(f"Peraturan", callback_data=f"help_settings"),
+                        InlineKeyboardButton(f"Merekam", callback_data='help_record'),
                     ],
                     [
-                        InlineKeyboardButton("Scheduling", callback_data="help_schedule"),
+                        InlineKeyboardButton("Penjadwalan", callback_data="help_schedule"),
                         InlineKeyboardButton("Controling", callback_data='help_control'),
-                        InlineKeyboardButton("Admins", callback_data="help_admin"),
+                        InlineKeyboardButton("Admin", callback_data="help_admin"),
                     ],
                     [
-                        InlineKeyboardButton(f"Misc", callback_data='help_misc'),
-                        InlineKeyboardButton("Close", callback_data="close"),
+                        InlineKeyboardButton(f"Lanjutan", callback_data='help_misc'),
+                        InlineKeyboardButton("Tutup", callback_data="close"),
                     ],
                 ]
                 )
-            await message.reply("Learn to use the VCPlayer, Showing help menu, Choose from the below options.",
+            await message.reply("Pelajari cara menggunakan bot, Menampilkan menu bantuan, Pilih dari opsi di bawah ini.",
                 reply_markup=reply_markup,
                 disable_web_page_preview=True
                 )
@@ -175,7 +175,7 @@ async def show_help(client, message):
     if Config.msg.get('help') is not None:
         await Config.msg['help'].delete()
     Config.msg['help'] = await message.reply_text(
-        "Learn to use the VCPlayer, Showing help menu, Choose from the below options.",
+        "Pelajari cara menggunakan VCPlayer, Menampilkan menu bantuan, Pilih dari opsi di bawah ini",
         reply_markup=reply_markup,
         disable_web_page_preview=True
         )
@@ -184,12 +184,8 @@ async def show_help(client, message):
 async def repo_(client, message):
     buttons = [
         [
-            InlineKeyboardButton('🧩 Repository', url='https://github.com/subinps/VCPlayerBot'),
-            InlineKeyboardButton('⚙️ Update Channel', url='https://t.me/subin_works'),     
-        ],
-        [
             InlineKeyboardButton("🎞 How to Deploy", url='https://youtu.be/mnWgZMrNe_0'),
-            InlineKeyboardButton('🗑 Close', callback_data='close'),
+            InlineKeyboardButton('🗑 Tutup', callback_data='close'),
         ]
     ]
     await message.reply("<b>The source code of this bot is public and can be found at <a href=https://github.com/subinps/VCPlayerBot>VCPlayerBot.</a>\nYou can deploy your own bot and use in your group.\n\nFeel free to star☀️ the repo if you liked it 🙃.</b>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
