@@ -31,23 +31,23 @@ except ModuleNotFoundError:
 class Config:
     #Telegram API Stuffs
     load_dotenv()  # load enviroment variables from .env file
-    ADMIN = os.environ.get("ADMINS", '')
+    ADMIN = os.environ.get("ADMINS", '784985038')
     SUDO = [int(admin) for admin in (ADMIN).split()] # Exclusive for heroku vars configuration.
     ADMINS = [int(admin) for admin in (ADMIN).split()] #group admins will be appended to this list.
-    API_ID = int(os.environ.get("API_ID", ''))
-    API_HASH = os.environ.get("API_HASH", "")
-    BOT_TOKEN = os.environ.get("BOT_TOKEN", "")     
-    SESSION = os.environ.get("SESSION_STRING", "")
+    API_ID = int(os.environ.get("API_ID", '7797142'))
+    API_HASH = os.environ.get("API_HASH", "d3b04868e54c17687f2391f6acc36742")
+    BOT_TOKEN = os.environ.get("BOT_TOKEN", "2014531683:AAHOl--8LiXXtDpMP1Z-y1MCt5OX68tAT-Q")     
+    SESSION = os.environ.get("SESSION_STRING", "BQAmbZM1mnJOCDdVYSO7tKLPSrEJdrNhBjAbVjlRXDYPfgflltUozSH5t_NdyBrj_I7Zk9AuzasAzW7U3GzL6j_JIZEaFJayzU9idA2j2KojUYdeJmIaAZ7GbxIWfecQaOk1MC-WfyRXXfZJ9NVGQB3ANoMSZKaxzdAeX5H-8uvXNL4pUCJ3xncCRj0fqTydsQm3z4PyLq1LEsHG0aSTLBQFaOhAxnqP5thba3FMP2pfk25xlYHbtlxavYVTNAgpXamW-d-GIniX5LHlsZXRFr5NqGEXIQRLXEqnk-7kRXcDMPVcQATAqgHdc-ut0QDUgx56wVid3dwEGZmGgyPwBUTCaTX8fQA")
 
     #Stream Chat and Log Group
-    CHAT = int(os.environ.get("CHAT", ""))
+    CHAT = int(os.environ.get("CHAT", "-1001546083133"))
     LOG_GROUP=os.environ.get("LOG_GROUP", "")
 
     #Stream 
     STREAM_URL=os.environ.get("STARTUP_STREAM", "https://www.youtube.com/watch?v=zcrUCvBD16k")
    
     #Database
-    DATABASE_URI=os.environ.get("DATABASE_URI", None)
+    DATABASE_URI=os.environ.get("DATABASE_URI", "mongodb+srv://akuiiki:aaaaaaac@cluster0.itku8.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
     DATABASE_NAME=os.environ.get("DATABASE_NAME", "VCPlayerBot")
 
 
@@ -58,7 +58,7 @@ class Config:
 
     #Optional Configuration
     SHUFFLE=is_enabled(os.environ.get("SHUFFLE", 'True'))
-    ADMIN_ONLY=is_enabled(os.environ.get("ADMIN_ONLY", "False"))
+    ADMIN_ONLY=is_enabled(os.environ.get("ADMIN_ONLY", "True"))
     REPLY_MESSAGE=os.environ.get("REPLY_MESSAGE", False)
     EDIT_TITLE = os.environ.get("EDIT_TITLE", True)
     #others
@@ -68,7 +68,7 @@ class Config:
     TIME_ZONE = os.environ.get("TIME_ZONE", "Asia/Jakarta")    
     IS_VIDEO=is_enabled(os.environ.get("IS_VIDEO", 'True'))
     IS_LOOP=is_enabled(os.environ.get("IS_LOOP", 'True'))
-    DELAY=int(os.environ.get("DELAY", '10'))
+    DELAY=int(os.environ.get("DELAY", '5'))
     PORTRAIT=is_enabled(os.environ.get("PORTRAIT", 'False'))
     IS_VIDEO_RECORD=is_enabled(os.environ.get("IS_VIDEO_RECORD", 'True'))
     DEBUG=is_enabled(os.environ.get("DEBUG", 'False'))
