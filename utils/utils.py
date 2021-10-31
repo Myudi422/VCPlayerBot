@@ -829,7 +829,7 @@ async def download(song, msg=None):
    
 
 
-async def chek_the_media(link, seek=False, pic=False, title="Music"):
+async def chek_the_media(link, seek=False, pic=False, title="{x[1]}"):
     if not Config.IS_VIDEO:
         width, height = None, None
         is_audio_=False
@@ -1251,7 +1251,7 @@ async def c_play(channel):
                     if filter == "audio":
                         if you.audio.title is None:
                             if you.audio.file_name is None:
-                                title_ = "Music"
+                                title_ = "{x[1]}"
                             else:
                                 title_ = you.audio.file_name
                         else:
@@ -1284,7 +1284,7 @@ async def c_play(channel):
                             if title_:
                                 title = title_
                     if title is None:
-                        title = "Music"
+                        title = "{x[1]}"
                     data={1:title, 2:file_id, 3:"telegram", 4:f"[{chat.title}]({you.link})", 5:unique}
                     Config.playlist.append(data)
                     await add_to_db_playlist(data)
